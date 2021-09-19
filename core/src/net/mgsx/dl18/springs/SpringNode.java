@@ -6,5 +6,6 @@ public class SpringNode {
 
 	public final Vector3 originalPosition = new Vector3();
 	public final Vector3 position = new Vector3();
-
+	public final Vector3 forces = new Vector3();
+	public final Vector3 velocity = new Vector3();
 }

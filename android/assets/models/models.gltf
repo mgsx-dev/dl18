@@ -54,14 +54,14 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 20,
+            "count" : 46,
             "max" : [
-                3,
+                6.160828113555908,
                 6.011485576629639,
-                1
+                6.172921657562256
             ],
             "min" : [
-                -1,
+                -5.858728885650635,
                 0.011485576629638672,
                 -1
             ],
@@ -70,25 +70,25 @@
         {
             "bufferView" : 1,
             "componentType" : 5123,
-            "count" : 72,
+            "count" : 168,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 240,
+            "byteLength" : 552,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 144,
-            "byteOffset" : 240
+            "byteLength" : 336,
+            "byteOffset" : 552
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 384,
+            "byteLength" : 888,
             "uri" : "models.bin"
         }
     ]
