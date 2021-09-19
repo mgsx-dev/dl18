@@ -3,6 +3,7 @@ package net.mgsx.dl18;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
@@ -78,6 +79,12 @@ public class DL18 extends ApplicationAdapter {
 		renderer.render(springs, camera);
 		
 		stage.draw();
+	}
+
+	public void filesDropped(String[] files) {
+		String path = files[0];
+		FileHandle file = Gdx.files.absolute(path);
+		springs = new SpringLoader().load(file);
 	}
 	
 }

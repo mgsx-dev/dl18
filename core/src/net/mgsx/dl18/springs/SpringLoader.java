@@ -1,6 +1,7 @@
 package net.mgsx.dl18.springs;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.VertexAttributes.Usage;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
@@ -15,10 +16,13 @@ import net.mgsx.gltf.scene3d.scene.SceneAsset;
 public class SpringLoader {
 
 	public SpringModel load(String path){
+		return load(Gdx.files.internal(path));
+	}
+	public SpringModel load(FileHandle file){
 		
 		SpringModel m = new SpringModel();
 		
-		SceneAsset asset = new GLTFLoader().load(Gdx.files.internal(path));
+		SceneAsset asset = new GLTFLoader().load(file);
 		Model model = asset.scene.model;
 		
 		for(Node modelNode : model.nodes){

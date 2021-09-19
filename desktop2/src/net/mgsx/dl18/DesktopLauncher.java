@@ -2,6 +2,7 @@ package net.mgsx.dl18;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3WindowAdapter;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
@@ -10,6 +11,13 @@ public class DesktopLauncher {
 		config.useVsync(false);
 		config.setIdleFPS(60);
 		config.setForegroundFPS(60);
-		new Lwjgl3Application(new DL18(), config);
+		DL18 game = new DL18();
+		config.setWindowListener(new Lwjgl3WindowAdapter(){
+			@Override
+			public void filesDropped(String[] files) {
+				game.filesDropped(files);
+			}
+		});
+		new Lwjgl3Application(game, config);
 	}
 }

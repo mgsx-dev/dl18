@@ -1,0 +1,78 @@
+{
+    "asset" : {
+        "copyright" : "mgsx",
+        "generator" : "Khronos glTF Blender I/O v1.6.16",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.003"
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.005",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0
+                    },
+                    "indices" : 1,
+                    "mode" : 1
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 20,
+            "max" : [
+                1,
+                5.2388763427734375,
+                2.4862873554229736
+            ],
+            "min" : [
+                -1,
+                0,
+                -4.220218181610107
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5123,
+            "count" : 76,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 240,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 152,
+            "byteOffset" : 240
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 392,
+            "uri" : "data:application/octet-stream;base64,AACAvwAAAAAAAIA/z39OvwAAAEDPf04/AACAvwAAAAAAAIC/z39OvwAAAEDPf06/AACAPwAAAAAAAIA/z39OPwAAAEDPf04/AACAPwAAAAAAAIC/z39OPwAAAEDPf06/SQUUvxFEckBJBRQ/SQUUvxFEckBJBRS/SQUUPxFEckBJBRS/SQUUPxFEckBJBRQ/XM6rvuCkp0Bczqs+XM6rvuCkp0Bczqu+XM6rPuCkp0Bczqu+XM6rPuCkp0Bczqs+AACAvwAAAABVHx9AAACAPwAAAABVHx9AAACAvwAAAAAHDIfAAACAPwAAAAAHDIfAAgAAAAAAAQABAAMAAwACAAYAAgADAAcABwAGAAQABgAHAAUABQAEAAAABAAFAAEACAAJAAkACgAKAAsACwAIAAUACwAIAAEAAwAJAAoABwAMAA0ADQAOAA4ADwAPAAwACgAOAA8ACwAIAAwADQAJABAAEQARAAQAAAAQAAUAEQABABAAEwASAAIAEgATAAYAAwASAAcAEwA="
+        }
+    ]
+}
