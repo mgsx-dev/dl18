@@ -28,6 +28,7 @@ allprojects {
         ashleyVersion = '1.7.3'
         aiVersion = '1.8.0'
         junitVersion = '4.12'
+        gltfVersion = 'master-SNAPSHOT'
     }
 
     repositories {
@@ -35,6 +36,7 @@ allprojects {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -90,6 +92,7 @@ project(":core") {
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+        compile "com.github.mgsx-dev.gdx-gltf:gltf:$gltfVersion"
         
         testCompile "junit:junit:$junitVersion"
         testCompile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
