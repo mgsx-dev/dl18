@@ -54,5 +54,14 @@ public class SpringGraph {
 			}
 		}
 	}
+
+	public void reset() {
+		for(SpringNode n : nodes){
+			n.forces.setZero();
+			n.velocity.setZero();
+			n.position.set(n.originalPosition);
+		}
+		
+	}
 	
 }

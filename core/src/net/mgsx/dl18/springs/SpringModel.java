@@ -10,4 +10,10 @@ public class SpringModel {
 			g.update(delta, config);
 		}
 	}
+
+	public void reset() {
+		for(SpringGraph g : graphs){
+			g.reset();
+		}
+	}
 }
