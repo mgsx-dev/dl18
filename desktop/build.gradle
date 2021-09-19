@@ -40,7 +40,6 @@ task dist(type: Jar) {
     manifest {
         attributes(
         	'Main-Class': project.mainClassName,
-        	'SplashScreen-Image': 'splash.png')
     }
     doLast { 
     	file(archivePath).setExecutable(true, false) 

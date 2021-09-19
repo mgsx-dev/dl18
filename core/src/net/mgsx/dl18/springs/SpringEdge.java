@@ -6,4 +6,5 @@ public class SpringEdge {
 	public SpringNode nodeB;
 	
 	public float originalDistance;
+	public float distance;
 }

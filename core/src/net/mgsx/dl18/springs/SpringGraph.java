@@ -28,6 +28,7 @@ public class SpringGraph {
 			dir.set(e.nodeB.position).sub(e.nodeA.position);
 			
 			float distance = dir.len();
+			e.distance = distance;
 			if(distance > 0){
 				dir.scl(1f / distance);
 			}
@@ -42,15 +43,37 @@ public class SpringGraph {
 			n.velocity.mulAdd(n.forces, delta);
 			n.position.mulAdd(n.velocity, delta);
 			
+			boolean clamped = false;
 			if(config.boundsMin != null){
-				n.position.x = Math.max(n.position.x, config.boundsMin.x);
-				n.position.y = Math.max(n.position.y, config.boundsMin.y);
-				n.position.z = Math.max(n.position.z, config.boundsMin.z);
+				if(n.position.x <= config.boundsMin.x){
+					n.position.x = config.boundsMin.x;
+					clamped = true;
+				}
+				if(n.position.y <= config.boundsMin.y){
+					n.position.y = config.boundsMin.y;
+					clamped = true;
+				}
+				if(n.position.z <= config.boundsMin.z){
+					n.position.z = config.boundsMin.z;
+					clamped = true;
+				}
 			}
 			if(config.boundsMax != null){
-				n.position.x = Math.min(n.position.x, config.boundsMax.x);
-				n.position.y = Math.min(n.position.y, config.boundsMax.y);
-				n.position.z = Math.min(n.position.z, config.boundsMax.z);
+				if(n.position.x >= config.boundsMax.x){
+					n.position.x = config.boundsMax.x;
+					clamped = true;
+				}
+				if(n.position.y >= config.boundsMax.y){
+					n.position.y = config.boundsMax.y;
+					clamped = true;
+				}
+				if(n.position.z >= config.boundsMax.z){
+					n.position.z = config.boundsMax.z;
+					clamped = true;
+				}
+			}
+			if(clamped){
+				n.velocity.setZero();
 			}
 		}
 	}
@@ -60,6 +83,9 @@ public class SpringGraph {
 			n.forces.setZero();
 			n.velocity.setZero();
 			n.position.set(n.originalPosition);
+		}
+		for(SpringEdge e : edges){
+			e.distance = e.originalDistance;
 		}
 		
 	}

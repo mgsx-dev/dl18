@@ -68,6 +68,7 @@ public class SpringLoader {
 				
 				for(SpringEdge e : graph.edges){
 					e.originalDistance = e.nodeA.originalPosition.dst(e.nodeB.originalPosition);
+					e.distance = e.originalDistance;
 				}
 			}
 			

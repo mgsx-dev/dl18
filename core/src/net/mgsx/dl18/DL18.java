@@ -20,17 +20,17 @@ import net.mgsx.dl18.ui.SpringUI;
 
 public class DL18 extends ApplicationAdapter {
 	
-	private SpringModel springs;
-	private SpringRenderer springRenderer;
+	public SpringModel springs;
+	public SpringRenderer renderer;
 	private Camera camera;
 	private CameraInputController control;
-	private SpringConfig config;
+	public SpringConfig config;
 	private Stage stage;
 
 	@Override
 	public void create () {
 		springs = new SpringLoader().load("models/models.gltf");
-		springRenderer = new SpringRenderer();
+		renderer = new SpringRenderer();
 		camera = new PerspectiveCamera();
 		camera.position.set(1, 1, 1).scl(10);
 		camera.up.set(Vector3.Y);
@@ -48,7 +48,7 @@ public class DL18 extends ApplicationAdapter {
 		
 		stage = new Stage(new ScreenViewport());
 		Skin skin = new Skin(Gdx.files.internal("skins/uiskin.json"));
-		SpringUI ui = new SpringUI(skin, config, springs);
+		SpringUI ui = new SpringUI(skin, this);
 		stage.addActor(ui);
 		
 		Gdx.input.setInputProcessor(new InputMultiplexer(stage, control));
@@ -75,7 +75,7 @@ public class DL18 extends ApplicationAdapter {
 		
 		ScreenUtils.clear(0, 0, 0, 0, true);
 		
-		springRenderer.render(springs, camera);
+		renderer.render(springs, camera);
 		
 		stage.draw();
 	}
