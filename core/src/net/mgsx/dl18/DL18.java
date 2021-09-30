@@ -17,16 +17,19 @@ import net.mgsx.dl18.springs.SpringConfig;
 import net.mgsx.dl18.springs.SpringLoader;
 import net.mgsx.dl18.springs.SpringModel;
 import net.mgsx.dl18.springs.SpringRenderer;
+import net.mgsx.dl18.ui.SpringEditor;
 import net.mgsx.dl18.ui.SpringUI;
 
 public class DL18 extends ApplicationAdapter {
 	
 	public SpringModel springs;
 	public SpringRenderer renderer;
-	private Camera camera;
+	public Camera camera;
 	private CameraInputController control;
 	public SpringConfig config;
 	private Stage stage;
+	private SpringEditor editor;
+	
 
 	@Override
 	public void create () {
@@ -52,7 +55,9 @@ public class DL18 extends ApplicationAdapter {
 		SpringUI ui = new SpringUI(skin, this);
 		stage.addActor(ui);
 		
-		Gdx.input.setInputProcessor(new InputMultiplexer(stage, control));
+		editor = new SpringEditor(this);
+		
+		Gdx.input.setInputProcessor(new InputMultiplexer(stage, editor, control));
 	}
 	
 	@Override

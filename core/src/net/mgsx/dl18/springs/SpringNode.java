@@ -8,4 +8,13 @@ public class SpringNode {
 	public final Vector3 position = new Vector3();
 	public final Vector3 forces = new Vector3();
 	public final Vector3 velocity = new Vector3();
+	public boolean anchor = true;
+	public void reset() {
+		forces.setZero();
+		velocity.setZero();
+		position.set(originalPosition);
+		anchor = false;
+	}
+	
+	
 }

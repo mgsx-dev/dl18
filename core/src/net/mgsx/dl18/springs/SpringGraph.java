@@ -40,6 +40,7 @@ public class SpringGraph {
 		}
 		
 		for(SpringNode n : nodes){
+			if(n.anchor) continue;
 			n.velocity.mulAdd(n.forces, delta);
 			n.position.mulAdd(n.velocity, delta);
 			
@@ -80,12 +81,10 @@ public class SpringGraph {
 
 	public void reset() {
 		for(SpringNode n : nodes){
-			n.forces.setZero();
-			n.velocity.setZero();
-			n.position.set(n.originalPosition);
+			n.reset();
 		}
 		for(SpringEdge e : edges){
-			e.distance = e.originalDistance;
+			e.reset();
 		}
 		
 	}

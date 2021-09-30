@@ -7,4 +7,7 @@ public class SpringEdge {
 	
 	public float originalDistance;
 	public float distance;
+	public void reset() {
+		distance = originalDistance;
+	}
 }
